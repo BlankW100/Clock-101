@@ -43,7 +43,7 @@ function convertTime() {
     return;
   }
 
-  // 🕒 Convert input to selected timezone
+
   const inputTime = dayjs(input);
   const utcTime = inputTime.utc();
   const converted = utcTime.tz(selectedTZ);

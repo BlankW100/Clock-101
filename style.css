@@ -1,0 +1,11 @@
+h1 {
+    animation: rgbColor 5s infinite linear;
+  }
+  
+  @keyframes rgbColor {
+    0%   { color: red; }
+    33%  { color: lime; }
+    66%  { color: blue; }
+    100% { color: red; }
+  }
+  

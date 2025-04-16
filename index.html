@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clock 101</title>
+  <link rel="stylesheet" href="style.css"> <!--e-->
 </head>
 <body>
-
+  
   <h1>Clock 101 - Time Zone Converter</h1>
 
   <!-- Timezone Selector -->
@@ -19,15 +21,15 @@
     <option value="Australia/Sydney">Sydney (AEST)</option>
   </select>
 
-  <!-- Live Clock Display -->
+
   <div id="clockDisplay" style="margin-top: 20px; font-size: 1.5rem;"></div>
 
-  <!-- Load Day.js core and plugins via CDN -->
+  <!-- Day.js -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
 
-  <!-- Extend Day.js to use timezone and UTC -->
+  <!-- plugin -->
   <script>
     dayjs.extend(dayjs_plugin_utc);
     dayjs.extend(dayjs_plugin_timezone);
@@ -47,7 +49,6 @@
     // Update every second
     setInterval(updateClock, 1000);
 
-    // Also run immediately on load
     updateClock();
   </script>
 
