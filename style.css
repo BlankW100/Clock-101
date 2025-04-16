@@ -5,10 +5,22 @@
   font-weight: bold;
 }
 
+h1 {
+  animation: rgbColor 5s infinite linear;
+}
+
+@keyframes rgbColor {
+  0%   { color: red; }
+  33%  { color: lime; }
+  66%  { color: blue; }
+  100% { color: red; }
+}
+
+
 #country {
   font-family: 'Times New Roman', Times, serif;
   font-size: 25px;
-  font-weight: bold;
+    font-weight: bold;
   width: 100px;
   height: 30px;
   border: 10px solid #a6a5c4;
