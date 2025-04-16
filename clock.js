@@ -51,35 +51,3 @@ function convertTime() {
   // ✅ Display result
   convertedDiv.textContent = `In ${selectedTZ}: ${converted.format('YYYY-MM-DD HH:mm:ss')}`;
 }
-
-
-
-// ========================
-// ⏰ Alarm Functionality
-// ========================
-
-function setAlarm() {
-  const alarmInput = document.getElementById('alarmTime').value;
-
-  if (!alarmInput) {
-    alert('⚠️ Please enter an alarm time.');
-    return;
-  }
-
-  const alarmTime = new Date(alarmInput).getTime();
-  const now = Date.now();
-  const delay = alarmTime - now;
-
-  if (delay <= 0) {
-    alert('⚠️ The alarm time must be in the future.');
-    return;
-  }
-
-  // 🔔 Set timeout alarm
-  setTimeout(() => {
-    alert('⏰ Alarm! Time’s up!');
-    // TODO: Add sound, notification, or email reminder
-  }, delay);
-
-  alert('✅ Alarm is set successfully!');
-}
