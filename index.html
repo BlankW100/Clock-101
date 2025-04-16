@@ -1,6 +1,55 @@
-<!--JS-->
-<script src="libs/dayjs.min.js"></script>
-<script src="libs/utc.js"></script>
-<script src="libs/timezone.js"></script>
-<script src="script.js" defer></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock 101</title>
+</head>
+<body>
 
+  <h1>Clock 101 - Time Zone Converter</h1>
+
+  <!-- Timezone Selector -->
+  <label for="timezoneSelect">Choose a Timezone:</label>
+  <select id="timezoneSelect">
+    <option value="America/New_York">New York (EST)</option>
+    <option value="Europe/London">London (GMT)</option>
+    <option value="Asia/Tokyo">Tokyo (JST)</option>
+    <option value="Asia/Kuala_Lumpur">Kuala Lumpur (MYT)</option>
+    <option value="Australia/Sydney">Sydney (AEST)</option>
+  </select>
+
+  <!-- Live Clock Display -->
+  <div id="clockDisplay" style="margin-top: 20px; font-size: 1.5rem;"></div>
+
+  <!-- Load Day.js core and plugins via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+
+  <!-- Extend Day.js to use timezone and UTC -->
+  <script>
+    dayjs.extend(dayjs_plugin_utc);
+    dayjs.extend(dayjs_plugin_timezone);
+  </script>
+
+  <!-- Custom JS: Live Clock with Timezone Selection -->
+  <script>
+    const timezoneSelect = document.getElementById("timezoneSelect");
+    const clockDisplay = document.getElementById("clockDisplay");
+
+    function updateClock() {
+      const selectedTZ = timezoneSelect.value;
+      const now = dayjs().tz(selectedTZ);
+      clockDisplay.innerHTML = `🕒 Time in ${selectedTZ}: <strong>${now.format("YYYY-MM-DD HH:mm:ss")}</strong>`;
+    }
+
+    // Update every second
+    setInterval(updateClock, 1000);
+
+    // Also run immediately on load
+    updateClock();
+  </script>
+
+</body>
+</html>
