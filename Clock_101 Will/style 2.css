@@ -1,0 +1,199 @@
+:root {
+    --primary: #5c5470;
+    --secondary: #a6a5c4;
+    --background: #f8f9fa;
+    --success: #c9e4ca;
+    --text: #2e3d30;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Base Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    background: var(--primary);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .header-title {
+    color: white;
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Main Content */
+  .main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
+  }
+  
+  /* Time Display Section */
+  .time-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  
+  .current-time {
+    font-size: 3.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  /* Country Selector */
+  .timezone-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .select-box {
+    padding: 0.8rem;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    min-width: 200px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .select-box:hover {
+    border-color: var(--primary);
+  }
+  
+  /* Alarm Controls */
+  .alarm-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  .alarm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .alarm-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .btn-primary {
+    background: var(--secondary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  /* Alarm List */
+  .alarm-list {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+  
+  .alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+  }
+  
+  .alarm-item:hover {
+    background: #f8f9fa;
+  }
+  
+  .alarm-time {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .alarm-label {
+    color: #666;
+    margin-left: 1rem;
+  }
+  
+  .alarm-actions button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    min-width: 400px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .current-time {
+      font-size: 2rem;
+    }
+    
+    .timezone-controls {
+      flex-direction: column;
+    }
+    
+    .alarm-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }

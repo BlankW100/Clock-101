@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock 101 - Smart Time Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">Clock 101</h1>
+  </header>
+
+  <main class="main-container">
+    <!-- Current Time Section -->
+    <section class="time-section">
+      <div class="current-time" id="currentTime">12:00 PM</div>
+      <div class="timezone-controls">
+        <select class="select-box" id="countrySelect">
+          <option>Malaysia (UTC+8)</option>
+          <option>Singapore (UTC+8)</option>
+          <option>Japan (UTC+9)</option>
+          <option>USA (UTC-5)</option>
+        </select>
+        <button class="btn btn-primary">Sync Time</button>
+      </div>
+    </section>
+
+    <!-- Alarm Section -->
+    <section class="alarm-section">
+      <div class="alarm-header">
+        <h2 class="alarm-title">Alarms</h2>
+        <button class="btn btn-primary" id="addAlarmBtn">+ New Alarm</button>
+      </div>
+      
+      <ul class="alarm-list">
+        <!-- Alarm Items -->
+        <li class="alarm-item">
+          <div>
+            <span class="alarm-time">07:00 AM</span>
+            <span class="alarm-label">Morning Wake-up</span>
+          </div>
+          <div class="alarm-actions">
+            <button title="Edit">✏️</button>
+            <button title="Delete">🗑️</button>
+          </div>
+        </li>
+        
+        <li class="alarm-item">
+          <div>
+            <span class="alarm-time">13:00 PM</span>
+            <span class="alarm-label">Lunch Break</span>
+          </div>
+          <div class="alarm-actions">
+            <button>✏️</button>
+            <button>🗑️</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Add Alarm Modal -->
+  <div class="modal-overlay" id="alarmModal">
+    <div class="modal-content">
+      <h2>Create New Alarm</h2>
+      <form id="alarmForm" style="margin-top: 1.5rem;">
+        <div style="margin-bottom: 1rem;">
+          <label>Alarm Time</label>
+          <input type="time" class="select-box" style="width: 100%" required>
+        </div>
+        
+        <div style="margin-bottom: 1rem;">
+          <label>Label</label>
+          <input type="text" class="select-box" style="width: 100%" placeholder="Enter alarm name">
+        </div>
+        
+        <div style="margin-bottom: 1rem;">
+          <label>Repeat</label>
+          <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+            <label><input type="checkbox"> Mon</label>
+            <label><input type="checkbox"> Tue</label>
+            <label><input type="checkbox"> Wed</label>
+            <label><input type="checkbox"> Thu</label>
+            <label><input type="checkbox"> Fri</label>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%">Save Alarm</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
